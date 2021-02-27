@@ -1,0 +1,30 @@
+$colors: (
+
+
+	"textA": rgb(44,44,44),
+	"textB": rgb(78,83,83),
+	"textC": rgb(128,131,139),
+	"textD": rgb(199,199,203),
+
+	"pinkA": #FF0090,
+	"pinkB": #FF74BE,
+	"pinkC": #FF92DB,
+	"pinkD": #FFD6F2,
+
+	"blueA": #3691B9,
+	"blueB": #83B9D5,
+	"blueC": #5FA7CC,
+	"blueD": #ABE5FF,
+
+
+
+	"primary": #7ED3E5FF,
+
+);
+
+
+
+
+@function myColor($color-name) {
+	@return map-get($colors, $color-name);
+}
