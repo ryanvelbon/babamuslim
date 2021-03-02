@@ -89,67 +89,67 @@
       <div class="tab">
         <h4>Spirituality</h4>
         <h5>How long have you been Muslim?</h5>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="born" value="born" name="muslimSince">
-          <label class="radio-label" for="born">I am Muslim since birth</label>
+          <label for="born">I am Muslim since birth</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="convert" value="convert" name="muslimSince">
-          <label class="radio-label" for="convert">I am a convert</label>
+          <label for="convert">I am a convert</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="notYet" value="not yet" name="muslimSince">
-          <label class="radio-label" for="notYet">I am not Muslim yet</label>
+          <label for="notYet">I am not Muslim yet</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="muslimSinceNA" value="NA" name="muslimSince" checked>
-          <label class="radio-label" for="muslimSinceNA">I prefer not to answer</label>
+          <label for="muslimSinceNA">I prefer not to answer</label>
         </p>
       </div>
 
       <div class="tab">
         <h4>Spirituality</h4>
         <h5>Do you pray 5 times a day?</h5>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="salatY" value="yes" name="salat">
-          <label class="radio-label" for="salatY">Yes, I pray 5 times a day</label>
+          <label for="salatY">Yes, I pray 5 times a day</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="salatN" value="no" name="salat">
-          <label class="radio-label" for="salatN">No, I never pray.</label>
+          <label for="salatN">No, I never pray.</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="salatSometimes" value="sometimes" name="salat">
-          <label class="radio-label" for="salatSometimes">I pray but I am not consistent.</label>
+          <label for="salatSometimes">I pray but I am not consistent.</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="salatNA" value="NA" name="salat" checked>
-          <label class="radio-label" for="salatNA">I prefer not to answer</label>
+          <label for="salatNA">I prefer not to answer</label>
         </p>
       </div>
 
       <div class="tab">
         <h4>Spirituality</h4>
         <h5>What is your knowledge of the Holy Quran?</h5>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="quran5" value="5" name="quranKnowledge">
-          <label class="radio-label" for="quran5">I am Hafiz</label>
+          <label for="quran5">I am Hafiz</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="quran4" value="4" name="quranKnowledge">
-          <label class="radio-label" for="quran4">I know several Juz</label>
+          <label for="quran4">I know several Juz</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="quran2" value="2" name="quranKnowledge">
-          <label class="radio-label" for="quran2">I can read Quran but have only memorized a few surah</label>
+          <label for="quran2">I can read Quran but have only memorized a few surah</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="quran1" value="1" name="quranKnowledge">
-          <label class="radio-label" for="quran1">I cannot read Quran yet</label>
+          <label for="quran1">I cannot read Quran yet</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="quranKnowledgeNA" value="NA" name="quranKnowledge" checked>
-          <label class="radio-label" for="quranKnowledgeNA">I prefer not to answer</label>
+          <label for="quranKnowledgeNA">I prefer not to answer</label>
         </p>
       </div>
       
@@ -166,25 +166,25 @@
       <div class="tab">
         <h4>Marital Status</h4>
         <h5>I am currently...</h5>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="single" value="single" name="relStatus">
-          <label class="radio-label" for="single">single</label>
+          <label for="single">single</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="married" value="married" name="relStatus">
-          <label class="radio-label" for="married">married</label>
+          <label for="married">married</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="divorced" value="divorced" name="relStatus">
-          <label class="radio-label" for="divorced">divorced</label>
+          <label for="divorced">divorced</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="widowed" value="widowed" name="relStatus">
-          <label class="radio-label" for="widowed">widowed</label>
+          <label for="widowed">widowed</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="relStatusNA" value="NA" name="relStatus" checked>
-          <label class="radio-label" for="relStatusNA">I prefer not to answer</label>
+          <label for="relStatusNA">I prefer not to answer</label>
         </p>
       </div>
 
@@ -196,47 +196,83 @@
 
       <div class="tab">
         <h4>Education</h4>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="primary" value="primary" name="edu">
-          <label class="radio-label" for="primary">Primary Education</label>
+          <label for="primary">Primary Education</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="secondary" value="secondary" name="edu">
-          <label class="radio-label" for="secondary">Secondary Education</label>
+          <label for="secondary">Secondary Education</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="bachelor" value="bachelor" name="edu">
-          <label class="radio-label" for="bachelor">Bachelor's Degree</label>
+          <label for="bachelor">Bachelor's Degree</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="master" value="master" name="edu">
-          <label class="radio-label" for="master">Master's Degree</label>
+          <label for="master">Master's Degree</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="doctorate" value="doctorate" name="edu">
-          <label class="radio-label" for="doctorate">Doctorate</label>
+          <label for="doctorate">Doctorate</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="eduNA" value="NA" name="edu" checked>
-          <label class="radio-label" for="eduNA">I prefer not to answer</label>
+          <label for="eduNA">I prefer not to answer</label>
         </p>
       </div>
 
       <div class="tab">
         <h4>Foobar</h4>
         <h5>Do you have any tattoos?</h5>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="tattoosY" value="yes" name="tattoos">
-          <label class="radio-label" for="tattoosY">Yes</label>
+          <label for="tattoosY">Yes</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="tattoosN" value="no" name="tattoos">
-          <label class="radio-label" for="tattoosN">No</label>
+          <label for="tattoosN">No</label>
         </p>
-        <p class="radio-p">
+        <p class="custom-radio">
           <input type="radio" id="tattoosNA" value="NA" name="tattoos" checked>
-          <label class="radio-label" for="tattoosNA">I prefer not to answer</label>
+          <label for="tattoosNA">I prefer not to answer</label>
         </p>
+      </div>
+
+      <div class="tab">
+        <h4>Foobar</h4>
+        <h5>Do you smoke?</h5>
+        <div class="custom-slider">
+          <input type="radio" name="smokingFreq" id="smokingFreq1" value="1" required>
+          <label for="smokingFreq1" data-freq="never"></label>
+          <input type="radio" name="smokingFreq" id="smokingFreq2" value="2" required>
+          <label for="smokingFreq2" data-freq="rarely"></label>
+          <input type="radio" name="smokingFreq" id="smokingFreq3" value="3" required>
+          <label for="smokingFreq3" data-freq="sometimes"></label>
+          <input type="radio" name="smokingFreq" id="smokingFreq4" value="4" required>
+          <label for="smokingFreq4" data-freq="often"></label>
+          <input type="radio" name="smokingFreq" id="smokingFreq5" value="5" required>
+          <label for="smokingFreq5" data-freq="very often"></label>
+          <div class="freq-pos"></div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <h4>Foobar</h4>
+        <h5>Do you drink?</h5>
+        <div class="custom-slider">
+          <input type="radio" name="drinkingFreq" id="drinkingFreq1" value="1" required>
+          <label for="drinkingFreq1" data-freq="never"></label>
+          <input type="radio" name="drinkingFreq" id="drinkingFreq2" value="2" required>
+          <label for="drinkingFreq2" data-freq="rarely"></label>
+          <input type="radio" name="drinkingFreq" id="drinkingFreq3" value="3" required>
+          <label for="drinkingFreq3" data-freq="sometimes"></label>
+          <input type="radio" name="drinkingFreq" id="drinkingFreq4" value="4" required>
+          <label for="drinkingFreq4" data-freq="often"></label>
+          <input type="radio" name="drinkingFreq" id="drinkingFreq5" value="5" required>
+          <label for="drinkingFreq5" data-freq="very often"></label>
+          <div class="freq-pos"></div>
+        </div>        
       </div>
       
       <!--    MEN   -->
@@ -250,10 +286,12 @@
         <!-- <p><input placeholder="Annual Income"></p> -->
       </div>
 
-      <div class="tab">
+      <!-- <div class="tab">
         <p><input placeholder="Car"></p>
         <p><input placeholder="House"></p>
-      </div>      
+      </div> -->
+
+
       <!--   WOMEN     -->
 
       

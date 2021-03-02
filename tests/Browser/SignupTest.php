@@ -28,7 +28,7 @@ class SignupTest extends DuskTestCase
                     ->click('#nextBtn')
                     ->select('nationality', '218') // Turkey
                     ->click('#nextBtn')
-                    ->typeSlowly('bio', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 50)
+                    ->typeSlowly('bio', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 50)
                     ->click('#nextBtn')
                     ->typeSlowly('height', '175')
                     ->typeSlowly('weight', '85')
@@ -48,16 +48,21 @@ class SignupTest extends DuskTestCase
                     ->click('#nextBtn')->pause(1000)
                     ->click('label[for="tattoosN"]')->pause(1000)
                     ->click('#nextBtn')->pause(1000)
-                    ->typeSlowly('job', 'elect')->pause(4000)
+                    ->click('label[for="smokingFreq2"]')->pause(1000)
+                    ->click('#nextBtn')->pause(1000)
+                    ->click('label[for="drinkingFreq4"]')->pause(1000)
+                    ->click('#nextBtn')->pause(1000)
+                    ->typeSlowly('job', 'elect')->pause(1000)
                     ->assertSee('Electrician')
-                    ->assertSee('foogooloozoo')
+                    ->click('#jobautocomplete-list > div') // this selector will not always be accurate. Find a better way to identify the desired dropdown list item
+                    // ->appendSlowly('job', 'rician')->pause(1000)
+                    ->click('#nextBtn') // should appear as Submit btn now
 
                     
 
-                    ->waitFor('#inexistentElement', 20)
+                    ->waitFor('#inexistentElement', 20);
 
 
-                    ->assertSee('Next');
         });
 
         // assertDatabaseHas('users', ['email' => 'johndoe@example.com']);

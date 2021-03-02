@@ -11,6 +11,8 @@ Route::get('/', function () {
     return view('welcome', ['countries' => $countries]);
 });
 
+Route::get('/test', function () {
+	return view('testElement');
+});
 
-
-// Route::post('/register', UserController::class, 'store')->name('register');
+Route::post('/register', [UserController::class, 'store'])->name('register');
