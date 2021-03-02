@@ -64,11 +64,11 @@
         <textarea name="bio" class="custom-textarea" spellcheck="false" placeholder="Write something about yourself..."></textarea>
       </div>
       
-      <div class="tab">
+      <div class="tab labels-on-left">
         <h4>Physique</h4>
-        <label for="height">Height (cm)</label>
+        <label for="height"><h5>Height (cm)</h5></label>
         <input type="number" id="height" name="height" min="100" max="250"></input>
-        <label for="weight">Weight (kg)</label>
+        <label for="weight"><h5>Weight (kg)</h5></label>
         <input type="number" id="weight" name="weight" min="30" max="250"></input>
         <label for="skin">Skin</label>
         <select name="skin" id="skin">
@@ -191,7 +191,7 @@
       <div class="tab">
         <h4>Kids</h4>
         <h5>Do you have any children? If so, how many?</h5>
-        <p>I have <input type="number" min="0" max="10" placeholder="0" name="kids"> children</p>
+        <h6>I have <input style="width: 50px; text-align: center;" type="number" min="0" max="10" placeholder="0" name="kids"> children</h6>
       </div>
 
       <div class="tab">
@@ -246,13 +246,13 @@
           <input type="radio" name="smokingFreq" id="smokingFreq1" value="1" required>
           <label for="smokingFreq1" data-freq="never"></label>
           <input type="radio" name="smokingFreq" id="smokingFreq2" value="2" required>
-          <label for="smokingFreq2" data-freq="rarely"></label>
+          <label for="smokingFreq2" data-freq=""></label>
           <input type="radio" name="smokingFreq" id="smokingFreq3" value="3" required>
           <label for="smokingFreq3" data-freq="sometimes"></label>
           <input type="radio" name="smokingFreq" id="smokingFreq4" value="4" required>
-          <label for="smokingFreq4" data-freq="often"></label>
+          <label for="smokingFreq4" data-freq=""></label>
           <input type="radio" name="smokingFreq" id="smokingFreq5" value="5" required>
-          <label for="smokingFreq5" data-freq="very often"></label>
+          <label for="smokingFreq5" data-freq="frequently"></label>
           <div class="freq-pos"></div>
         </div>
       </div>
@@ -264,27 +264,45 @@
           <input type="radio" name="drinkingFreq" id="drinkingFreq1" value="1" required>
           <label for="drinkingFreq1" data-freq="never"></label>
           <input type="radio" name="drinkingFreq" id="drinkingFreq2" value="2" required>
-          <label for="drinkingFreq2" data-freq="rarely"></label>
+          <label for="drinkingFreq2" data-freq=""></label>
           <input type="radio" name="drinkingFreq" id="drinkingFreq3" value="3" required>
           <label for="drinkingFreq3" data-freq="sometimes"></label>
           <input type="radio" name="drinkingFreq" id="drinkingFreq4" value="4" required>
-          <label for="drinkingFreq4" data-freq="often"></label>
+          <label for="drinkingFreq4" data-freq=""></label>
           <input type="radio" name="drinkingFreq" id="drinkingFreq5" value="5" required>
-          <label for="drinkingFreq5" data-freq="very often"></label>
+          <label for="drinkingFreq5" data-freq="frequently"></label>
           <div class="freq-pos"></div>
         </div>        
       </div>
-      
+
       <!--    MEN   -->
       <div class="tab">
         <div class="autocomplete" style="width:300px;">
+          <h4>Profession</h4>
           <h5>What is your profession?</h5>
           <input id="job" type="text" name="job" placeholder="Profession">
         </div>
-
-        <!-- <p><input placeholder="Profession"></p> -->
-        <!-- <p><input placeholder="Annual Income"></p> -->
       </div>
+
+      <div class="tab">
+        <h4>Profession</h4>
+        <h5>What is your annual income?</h5>
+        <div class="custom-slider">
+          <input type="radio" name="salary" id="salary1" value="1" required>
+          <label for="salary1" data-freq="< $10k"></label>
+          <input type="radio" name="salary" id="salary2" value="2" required>
+          <label for="salary2" data-freq="$10k-25k"></label>
+          <input type="radio" name="salary" id="salary3" value="3" required>
+          <label for="salary3" data-freq="$25k-50k"></label>
+          <input type="radio" name="salary" id="salary4" value="4" required>
+          <label for="salary4" data-freq="$50k-100k"></label>
+          <input type="radio" name="salary" id="salary5" value="5" required>
+          <label for="salary5" data-freq="$100k+"></label>
+          <div class="freq-pos"></div>
+        </div>        
+      </div>
+
+      
 
       <!-- <div class="tab">
         <p><input placeholder="Car"></p>

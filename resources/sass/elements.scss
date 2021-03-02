@@ -1,3 +1,5 @@
+@import "custom-variables";
+
 /* Custom Dropdown */
 .select {
   // float: left;
@@ -201,6 +203,7 @@ $number-of-options: 5;
   position: relative;
   width: 100%;
   height: 50px;
+  margin-bottom: 40px;
   user-select: none;
   &::before {
     content: " ";
@@ -228,6 +231,7 @@ $number-of-options: 5;
     flex: 1;
     user-select: none;
     cursor: pointer;
+    color: #fff;
   }
   label {
     display: inline-block;
@@ -257,7 +261,7 @@ $number-of-options: 5;
       width: 30px;
       height: 30px;
       border: 2px solid #fff;
-      background: #0f0;
+      background: myColor(pinkA);
       border-radius: 50%;
       pointer-events: none;
       user-select: none;
@@ -305,3 +309,39 @@ $number-of-options: 5;
     z-index: 2;
   }
 }
+
+
+/* color-palette */
+.color-palette {
+  background: #384047;
+  min-height: 60px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  ul {
+    list-style: none;
+    margin: 0;
+    float: left;
+    padding: 10px 0 20px;
+    width: 100%;
+    text-align: center;
+    li {
+      display: block;
+      height: 54px;
+      width: 54px;
+      border-radius: 60px;
+      cursor: pointer;
+      border: 0;
+      box-shadow: 0 3px 0 0 #222;
+      display: inline-block;
+      margin: 0 5px 10px;
+    }
+    .selected {
+      border: 7px solid #fff;
+      width: 40px;
+      height: 40px;
+    }  
+  }
+}
+
