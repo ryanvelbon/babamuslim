@@ -59,6 +59,12 @@ class SignupTest extends DuskTestCase
                     ->click('#jobautocomplete-list > div') // this selector will not always be accurate. Find a better way to identify the desired dropdown list item
                     ->click('#nextBtn')->pause($pause)
                     ->click('label[for="salary5"]')->pause($pause)
+                    ->click('#nextBtn')->pause($pause)
+                    ->click('#skinColorMenu > ul > li[data-hex-value="#A26348"]')
+                    ->click('#nextBtn')
+                    ->click('#hairColorMenu > ul > li[data-hex-value="#F4EBAA"]')
+                    ->click('#nextBtn')
+                    ->click('#eyeColorMenu > ul > li[data-hex-value="#7FB4BE"]')
                     ->click('#nextBtn') // should appear as Submit btn now
 
                     

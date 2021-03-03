@@ -9,5 +9,8 @@ document.querySelectorAll('.color-palette').forEach((palette) => {
     }
     
         e.target.classList.add('selected');
+
+        // set the hidden input to the hex value stored in the <li> element
+        palette.previousElementSibling.value = e.target.getAttribute('data-hex-value');
     })
 });
