@@ -1,7 +1,33 @@
 @import "custom-variables";
 
+
+
+#progressBar {
+  $height: 20px;
+  width: 90%;
+  height: $height;
+  position: relative;
+  background: grey;
+  border-radius: $height/2;
+  background: none;
+  border: 2px solid myColor(pinkD);
+  box-shadow: 1px 1px 3px #fff;
+  overflow: hidden;
+  
+  .fill {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    /*background: linear-gradient(to left, rgba(100,235,100,1), rgba(180,255,180,1));*/
+    background: #fff;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+}
+
 #profileSetupForm {
-  /*background-color: lightblue;*/
+  background-color: lightblue;
   margin: 30px auto;
   padding: 40px;
   min-width: 300px;
@@ -86,25 +112,6 @@
 
   .tab {
     display: none;
-  }
-
-  .step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
-
-    &.active {
-      opacity: 1;
-    }
-
-    &.finish {
-      background-color: #4CAF50;
-    }
   }
 
   .labels-on-left {

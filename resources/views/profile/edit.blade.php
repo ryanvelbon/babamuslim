@@ -9,6 +9,9 @@
 </head>
 <body>
   <h1>Welcome {{Auth::user()->username}}</h1>
+  <div id="progressBar">
+    <div class="fill"></div>
+  </div>
   <form id="profileSetupForm" autocomplete="off" method="POST" action="{{ route('profile.edit') }}">
     <input type="hidden" name="_method" value="PUT">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -296,6 +299,18 @@
       <p><input placeholder="House"></p>
     </div> -->
 
+    <div class="tab">
+      <h4>Appearance</h4>
+      <h5>Your hair color</h5>
+      <div id="hairColor" class="color-palette">
+        <ul>
+          @foreach($hair_colors as $color)
+            <li style="background: {{$color}};"></li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
+
 
     <!--   WOMEN     -->
 
@@ -308,8 +323,7 @@
       <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
     </div>
     
-
-    <!-- Circles which indicates the steps of the form: -->
+    <!-- REMOVE THIS! But for some reason .buttons is not visible by Dusk without this -->
     <div style="text-align:center;margin-top:40px;">
       <span class="step"></span>
       <span class="step"></span>
@@ -330,8 +344,8 @@
       <span class="step"></span>
       <span class="step"></span>
       <span class="step"></span>
-      <span class="step"></span>
     </div>
+
     <input type="hidden" name="token" value="{{ Session::token() }}">
     </form>
 </body>

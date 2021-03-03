@@ -1,4 +1,8 @@
 var currentTab = 0;
+progress = 0; // represents a percentage
+var tabs = document.getElementsByClassName("tab");
+var incr = 100/tabs.length; // incrementation for progress
+
 
 showTab(currentTab);
 
@@ -15,7 +19,7 @@ function showTab(n) {
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
-  fixStepIndicator(n)
+  fixStepIndicator(n);
 }
 
 /* The reason why we haven't declared this function like so "function nextPrev(n)" is due to:
@@ -33,7 +37,18 @@ window.nextPrev = function (n) {
     document.getElementById("regForm").submit();
     return false;
   }
+
+  // show tab
   showTab(currentTab);
+  
+  // update progress bar
+  var prog = document.getElementById("progressBar");
+  var fill = prog.querySelector('.fill');
+  if(window.event.target.id == 'nextBtn')
+    progress += incr;
+  else if(window.event.target.id == 'prevBtn')
+    progress -= incr;
+  fill.style.width = progress + "%";
 }
 
 function validateForm() {
