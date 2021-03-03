@@ -63,7 +63,7 @@ class SignupTest extends DuskTestCase
 
                     
 
-                    ->waitFor('#inexistentElement', 20);
+                    ->waitFor('#inexistentElement', 2);
 
 
         });

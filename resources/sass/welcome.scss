@@ -1,42 +1,333 @@
 @import "custom-variables";
 
+
+* {
+	font-family: Arial, sans-serif;
+
+	margin-block-start:0; margin-block-end:0; margin-inline-start:0; margin-inline-end:0;
+	padding-block-start:0; padding-block-end:0; padding-inline-start:0; padding-inline-end:0;
+}
+
+body {
+	margin: 0px;
+}
+
+img {
+	filter: grayscale(100%);
+}
+
+
+
+.jumbotron {
+	position: relative;
+	text-align: center;
+
+	/*background-color: green;*/
+
+	color: #fff;
+
+
+
+	img {
+		/*https://www.w3schools.com/howto/howto_css_image_responsive.asp*/
+		width: 100%;
+		height: auto;
+		filter: grayscale(0%);
+		/*filter: contrast(200%);*/
+		/*filter: saturate(2);*/
+	}
+
+	#overlay {
+	  position: absolute; /* Sit on top of the page content */
+	  width: 100%; /* Full width (cover the whole page) */
+	  height: 100%; /* Full height (cover the whole page) */
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  /*background-color: rgba(0,0,0,0.1);*/
+	  /*background-color: linear-gradient(to bottom, rgba(200,17,100,0.8), rgba(0,0,0,0));*/
+	  /*background-color: rgba(100,17,100,0.5);*/
+	}
+
+	.header {
+		position: absolute;
+		top: 0%;
+		width: 100%;
+
+		/*background-color: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0));*/
+		background-color: rgba(0,0,0,0.2);
+
+		text-align:right;
+
+		h1 {
+			/*text-align: left;*/
+			float: left;
+			padding-left: 20px;
+			padding-top: 10px;
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+			padding-top: 20px;
+			padding-right: 20px;
+		}
+
+
+	}
+
+
+	.content-center {
+		position: absolute;
+		height: 450px;
+		width: 90%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		h1 {
+			font-size: 150px;
+			padding: 0;
+			margin-bottom: 0;
+		}
+
+		h2 {
+			font-size: 60px;
+			font-weight: bold;
+			font-style: italic;
+			text-shadow: 2px 2px 8px #000;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+button:focus {
+	outline: none;
+}
+
+
+#signupBtn1{
+  &::after {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  background: none;
+  border: 0px solid #fff;
+  border-radius: 55px;
+  color: #fff;
+  font-size: 20px;
+  padding: 1.5em 3em;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    background: linear-gradient(to right, myColor(pinkB), myColor(pinkA));
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 110%;
+    left: 0%;
+    top: -5%;
+    transition-duration: 0.6s;
+    width: 100%;
+  }
+
+  &:hover {
+    cursor: pointer;
+    &:after {
+      width: 200%;
+      border-radius: 0px;      
+    }
+  }
+}
+
+#signupBtn2 {
+	
+	background: none;
+	border: 5px solid white;
+	border-radius: 55px;
+	font-size: 20px;
+	padding: 1.5em 3em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 40px;
+}
+
+#login-btn{  
+  background: #fff;
+  color: #000;
+  border: 0px solid #fff;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 1em 1.5em;
+  position: relative;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, myColor(pinkB), myColor(pinkA));
+    color: #fff;
+  }
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
+  width: 100%;
   height: 100%;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
+  .modal-content {
+    background-color: myColor(pinkA);
+    margin: 100px auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: none;
+    box-shadow: 0 40px 80px 0 rgba(0,0,0,0.9);
+    width: 80%;
+    min-width: 300px;
+    max-width: 400px;
+
+    .close {
+      color: #fff;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+
+      &:hover,
+      &:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    form {
+
+    	text-align: center;
+
+      h4 {
+        color: #fff;
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        background: #fff;
+        color: myColor(pinkA);
+        border: 0px solid #fff;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: .1em;
+        padding: 1.3em 1.5em;
+        position: relative;
+        text-transform: uppercase;
+        margin: 50px 0 100px 0px;
+        transition: 0.5s;
+        width: 70%;
+
+        /*span {
+					background: linear-gradient(to right, myColor(pinkA), myColor(pinkB));
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+        }*/
+        
+        &:hover {
+          cursor: pointer;
+          background: #fff;
+          color: #000;
+          width: 80%;
+        }
+      }
+
+      input {
+        background: #fff5;
+        width: 70%;
+        font-size: 20px;
+        padding: 1em;
+        margin: 10px;
+        border: 1px white solid;
+        color: white;
+        transition: all 0.3s;
+        
+        &::placeholder {
+          color: #fff;
+        }
+
+        &:focus {
+          outline: none;
+          background: #fff;
+          color: #000;
+          border-width: 3px;
+        }
+      }
+    }
+  }
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: myColor(pinkA);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: none;
-  box-shadow: 0 40px 80px 0 rgba(0,0,0,0.9);
-  width: 80%;
-  min-width: 350px;
-  max-width: 500px;
+
+@media screen and (max-width: 991px) {
+/* start of large tablet styles */
+	.jumbotron .content-center {
+
+		height: 200px;
+		top: 70%;
+		
+		h1 {
+			display: none;
+		}
+		h2 {
+			/*margin-top: 200px;*/
+		}
+		button#signupBtn1 {
+			font-size: 14px;
+		}
+	}
 }
 
-/* The Close Button */
-.close {
-  color: #fff;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+@media screen and (max-width: 767px) {
+/* start of medium tablet styles */
+	.jumbotron .content-center {
+
+
+		h2 {
+			font-size: 40px;
+		}
+		h3 {
+			font-size: 20px;
+		}
+	}
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+@media screen and (max-width: 479px) {
+	.jumbotron .content-center {
+		top: 100%;
+		height: 50px;
+		h2, h3 {
+			display: none;
+		}
+	}
 }
+
+
+
+
+
+
+

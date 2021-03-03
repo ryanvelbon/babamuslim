@@ -2,10 +2,8 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/elements.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/welcome.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 <body>
     <div class="jumbotron">
@@ -41,7 +39,7 @@
                 <input name="username" placeholder="username" value="{{old('username')}}" autocomplete="off">
                 <input name="password" type="password" placeholder="password" autocomplete="off">
                 <input name="password_confirmation" type="password" placeholder="confirm password" autocomplete="off">
-                <button type="submit">Sign up</button>
+                <button type="submit"><span>Continue</span></button>
                 <input type="hidden" name="token" value="{{ Session::token() }}">
             </form>    
         </div>
