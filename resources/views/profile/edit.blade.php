@@ -71,20 +71,6 @@
       <input type="number" id="height" name="height" min="100" max="250"></input>
       <label for="weight"><h5>Weight (kg)</h5></label>
       <input type="number" id="weight" name="weight" min="30" max="250"></input>
-      <label for="skin">Skin</label>
-      <select name="skin" id="skin">
-        <option value="white">white</option>
-        <option value="brown">brown</option>
-        <option value="black">black</option>
-        <option value="tanned">tanned</option>
-      </select>
-      <label for="eyes">Eye Color</label>
-      <select name="eyes" id="eyes">
-        <option value="brown">brown</option>
-        <option value="black">black</option>
-        <option value="blue">blue</option>
-        <option value="green">green</option>
-      </select>
     </div>
     
     <div class="tab">
@@ -247,13 +233,13 @@
         <input type="radio" name="smokingFreq" id="smokingFreq1" value="1" required>
         <label for="smokingFreq1" data-freq="never"></label>
         <input type="radio" name="smokingFreq" id="smokingFreq2" value="2" required>
-        <label for="smokingFreq2" data-freq=""></label>
+        <label for="smokingFreq2" data-freq="rarely"></label>
         <input type="radio" name="smokingFreq" id="smokingFreq3" value="3" required>
         <label for="smokingFreq3" data-freq="sometimes"></label>
         <input type="radio" name="smokingFreq" id="smokingFreq4" value="4" required>
-        <label for="smokingFreq4" data-freq=""></label>
+        <label for="smokingFreq4" data-freq="often"></label>
         <input type="radio" name="smokingFreq" id="smokingFreq5" value="5" required>
-        <label for="smokingFreq5" data-freq="frequently"></label>
+        <label for="smokingFreq5" data-freq="very often"></label>
         <div class="freq-pos"></div>
       </div>
     </div>
@@ -265,13 +251,13 @@
         <input type="radio" name="drinkingFreq" id="drinkingFreq1" value="1" required>
         <label for="drinkingFreq1" data-freq="never"></label>
         <input type="radio" name="drinkingFreq" id="drinkingFreq2" value="2" required>
-        <label for="drinkingFreq2" data-freq=""></label>
+        <label for="drinkingFreq2" data-freq="rarely"></label>
         <input type="radio" name="drinkingFreq" id="drinkingFreq3" value="3" required>
         <label for="drinkingFreq3" data-freq="sometimes"></label>
         <input type="radio" name="drinkingFreq" id="drinkingFreq4" value="4" required>
-        <label for="drinkingFreq4" data-freq=""></label>
+        <label for="drinkingFreq4" data-freq="often"></label>
         <input type="radio" name="drinkingFreq" id="drinkingFreq5" value="5" required>
-        <label for="drinkingFreq5" data-freq="frequently"></label>
+        <label for="drinkingFreq5" data-freq="very often"></label>
         <div class="freq-pos"></div>
       </div>        
     </div>
@@ -317,15 +303,11 @@
 
     
     
-    
-    
-
-    <div style="overflow:auto;">
-      <div style="float:right;">
-        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-      </div>
+    <div class="buttons">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
     </div>
+    
 
     <!-- Circles which indicates the steps of the form: -->
     <div style="text-align:center;margin-top:40px;">

@@ -1,5 +1,13 @@
 @import "custom-variables";
 
+html {
+	background-color: myColor(pinkA);
+}
+
 * {
 	font-family: Arial, sans-serif;
+}
+
+button:focus {
+	outline: none;
 }

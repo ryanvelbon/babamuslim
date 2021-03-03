@@ -13,7 +13,7 @@ class SignupTest extends DuskTestCase
     public function testExample()
     {
         $this->browse(function (Browser $browser) {
-            $pause = 100;
+            $pause = 1000;
             $browser->visit('/')
                     ->click('#signupBtn1') // or click?
                     ->typeSlowly('email', 'johndoe@example.com')
