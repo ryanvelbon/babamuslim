@@ -15,3 +15,5 @@ yarn-error.log
 
 
 /public
+/resources/sass/welcome2.scss
+/resources/views/welcome2.blade.php

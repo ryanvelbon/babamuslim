@@ -14,8 +14,8 @@ class SignupTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $pause = 200;
-            $browser->visit('/')
-                    ->click('#signupBtn1')
+            $browser->visit('/')->pause(3000)
+                    ->click('#signupBtn')
                     ->typeSlowly('email', 'johndoe@example.com')
                     ->typeSlowly('username', 'johnnyboy99')
                     ->typeSlowly('password', '1234qwerAS!')

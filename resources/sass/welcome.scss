@@ -1,113 +1,119 @@
 @import "custom-variables";
 
-
 * {
-	font-family: Arial, sans-serif;
-
-	margin-block-start:0; margin-block-end:0; margin-inline-start:0; margin-inline-end:0;
-	padding-block-start:0; padding-block-end:0; padding-inline-start:0; padding-inline-end:0;
+  font-family: arial, sans-serif;
+  margin-block-start:0; margin-block-end:0; margin-inline-start:0; margin-inline-end:0;
+  padding-block-start:0; padding-block-end:0; padding-inline-start:0; padding-inline-end:0;
 }
 
 body {
-	margin: 0px;
+  /*background: lightblue;*/
+  background: linear-gradient(to bottom, lightblue, #ccf);
 }
 
-img {
-	filter: grayscale(100%);
+button {
+  &:hover, &:focus {
+    outline: none;
+  }
 }
 
+#mainSection {
+  min-height: 85vh; // occupies percentage of screen height
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  #divA {
+    width: 600px;
+    flex-grow: 1;
+    padding: 40px;
+    h1 {
+      font-size: 60px;
 
-
-.jumbotron {
-	position: relative;
-	text-align: center;
-
-	/*background-color: green;*/
-
-	color: #fff;
-
-
-
-	img {
-		/*https://www.w3schools.com/howto/howto_css_image_responsive.asp*/
-		width: 100%;
-		height: auto;
-		filter: grayscale(0%);
-		/*filter: contrast(200%);*/
-		/*filter: saturate(2);*/
-	}
-
-	#overlay {
-	  position: absolute; /* Sit on top of the page content */
-	  width: 100%; /* Full width (cover the whole page) */
-	  height: 100%; /* Full height (cover the whole page) */
-	  top: 0;
-	  left: 0;
-	  right: 0;
-	  bottom: 0;
-	  /*background-color: rgba(0,0,0,0.1);*/
-	  /*background-color: linear-gradient(to bottom, rgba(200,17,100,0.8), rgba(0,0,0,0));*/
-	  /*background-color: rgba(100,17,100,0.5);*/
-	}
-
-	.header {
-		position: absolute;
-		top: 0%;
-		width: 100%;
-
-		/*background-color: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0));*/
-		background-color: rgba(0,0,0,0.2);
-
-		text-align:right;
-
-		h1 {
-			/*text-align: left;*/
-			float: left;
-			padding-left: 20px;
-			padding-top: 10px;
-		}
-
-		a {
-			text-decoration: none;
-			color: inherit;
-			padding-top: 20px;
-			padding-right: 20px;
-		}
-
-
-	}
-
-
-	.content-center {
-		position: absolute;
-		height: 450px;
-		width: 90%;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-
-		h1 {
-			font-size: 150px;
-			padding: 0;
-			margin-bottom: 0;
-		}
-
-		h2 {
-			font-size: 60px;
-			font-weight: bold;
-			font-style: italic;
-			text-shadow: 2px 2px 8px #000;
-			margin-bottom: 30px;
-		}
-	}
+      span {
+        font-size: 30px;
+        font-family: times;
+      }
+    }
+    h1, h2 {
+      color: #333;
+    }
+  }
+  #divB {
+    width: 400px;
+    flex-grow: 1;
+    text-align: center;
+    
+  }
 }
 
-button:focus {
-	outline: none;
+#loginForm {
+  margin-top: 150px;
+  margin-bottom: 100px;
+  display: inline-block;
+  // border: 5px solid #f00;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 5px 4px #888;
+  text-align: center;
+  
+  width: 400px;
+  
+  transition: 0.5s;
+  &:hover {
+    // border: 5px solid #777;
+    box-shadow: -2px 5px 4px #AAA;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  input, button {
+    box-sizing: border-box; // not sure about this being here....
+    border: none;
+    border-radius: 15px;
+  }
+
+  input {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 12px 0;
+    display: inline-block;
+    background: #f1f1f1;
+    transition: 0.5s;
+    &:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: myColor(pinkA);
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 95%;
+    opacity: 0.8;
+    transition: 0.5s;
+    &:hover, &:focus {
+      opacity: 1;
+      width: 100%;
+      border-radius: 0px;
+    }
+  }
+
+  a {
+    color: dodgerblue;
+  }
+
+  .signup {
+    text-align: center;
+  }
 }
 
-
-#signupBtn1{
+#signupBtn{
   &::after {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -145,39 +151,6 @@ button:focus {
       width: 200%;
       border-radius: 0px;      
     }
-  }
-}
-
-#signupBtn2 {
-	
-	background: none;
-	border: 5px solid white;
-	border-radius: 55px;
-	font-size: 20px;
-	padding: 1.5em 3em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	margin-top: 40px;
-}
-
-#login-btn{  
-  background: #fff;
-  color: #000;
-  border: 0px solid #fff;
-  border-radius: 10px;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 1em 1.5em;
-  position: relative;
-  text-transform: uppercase;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  
-  &:hover {
-    cursor: pointer;
-    background: linear-gradient(to right, myColor(pinkB), myColor(pinkA));
-    color: #fff;
   }
 }
 
@@ -219,7 +192,7 @@ button:focus {
 
     form {
 
-    	text-align: center;
+      text-align: center;
 
       h4 {
         color: #fff;
@@ -243,9 +216,9 @@ button:focus {
         width: 70%;
 
         /*span {
-					background: linear-gradient(to right, myColor(pinkA), myColor(pinkB));
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
+          background: linear-gradient(to right, myColor(pinkA), myColor(pinkB));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }*/
         
         &:hover {
@@ -279,54 +252,3 @@ button:focus {
     }
   }
 }
-
-
-@media screen and (max-width: 991px) {
-/* start of large tablet styles */
-	.jumbotron .content-center {
-
-		height: 200px;
-		top: 70%;
-		
-		h1 {
-			display: none;
-		}
-		h2 {
-			/*margin-top: 200px;*/
-		}
-		button#signupBtn1 {
-			font-size: 14px;
-		}
-	}
-}
-
-@media screen and (max-width: 767px) {
-/* start of medium tablet styles */
-	.jumbotron .content-center {
-
-
-		h2 {
-			font-size: 40px;
-		}
-		h3 {
-			font-size: 20px;
-		}
-	}
-}
-
-@media screen and (max-width: 479px) {
-	.jumbotron .content-center {
-		top: 100%;
-		height: 50px;
-		h2, h3 {
-			display: none;
-		}
-	}
-}
-
-
-
-
-
-
-
