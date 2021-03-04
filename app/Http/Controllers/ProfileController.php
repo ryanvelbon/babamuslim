@@ -66,8 +66,10 @@ class ProfileController extends Controller
         return view('profile.editExtra');
     }
 
-    public function updateExtraInfo()
+    public function updateExtraInfo(Request $request)
     {
-        // pass
+        // load Profile of current user
+
+        // store the data of the extra fields
     }
 }

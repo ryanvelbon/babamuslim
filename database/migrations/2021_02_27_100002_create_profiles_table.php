@@ -27,8 +27,8 @@ class CreateProfilesTable extends Migration
             $table->tinyInteger('salat')->nullable();
             $table->tinyInteger('quran_knowledge')->nullable();
             $table->boolean('tattoos')->nullable();
-            $table->tinyInteger('smoking_freq');
-            $table->tinyInteger('drinking_freq');
+            $table->tinyInteger('smoking_freq')->nullable();
+            $table->tinyInteger('drinking_freq')->nullable();
 
             $table->string('edu', 50)->nullable();
             $table->string('job', 100);
