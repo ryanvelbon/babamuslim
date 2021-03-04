@@ -43,12 +43,6 @@ class ProfileController extends Controller
         $profile->skin_color = $request['skinColor'];
         $profile->hair_color = $request['hairColor'];
         $profile->eye_color = $request['eyeColor'];
-        $profile->muslim_since = $request['muslimSince'];
-        $profile->salat = $request['salat'];
-        $profile->quran_knowledge = $request['quranKnowledge'];
-        $profile->tattoos = $request['tattoos'];
-        $profile->smoking_freq = $request['smokingFreq'];
-        $profile->drinking_freq = $request['drinkingFreq'];
         $profile->edu = $request['edu'];
         $profile->job = $request['job'];
         $profile->salary = $request['salary'];
@@ -68,8 +62,18 @@ class ProfileController extends Controller
 
     public function updateExtraInfo(Request $request)
     {
-        // load Profile of current user
+        $profile = Profile::where('user_id', Auth::id())->first();
 
         // store the data of the extra fields
+        $profile->muslim_since = $request['muslimSince'];
+        $profile->salat = $request['salat'];
+        $profile->quran_knowledge = $request['quranKnowledge'];
+        $profile->tattoos = $request['tattoos'];
+        $profile->smoking_freq = $request['smokingFreq'];
+        $profile->drinking_freq = $request['drinkingFreq'];
+
+        $profile->save();
+
+        return "additional info saved";
     }
 }

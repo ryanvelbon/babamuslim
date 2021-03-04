@@ -15,12 +15,14 @@ class SignupTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $pause = 200;
             $browser->visit('/')
-                    ->click('#signupBtn1') // or click?
+                    ->click('#signupBtn1')
                     ->typeSlowly('email', 'johndoe@example.com')
                     ->typeSlowly('username', 'johnnyboy99')
                     ->typeSlowly('password', '1234qwerAS!')
                     ->typeSlowly('password_confirmation', '1234qwerAS!')
                     ->click('#regForm button')->pause(3000) // long pause required to give page enough time to load
+
+                    // phase 1 of profile setup
                     ->click('label[for="genderM"]')->pause($pause)
                     ->click('#nextBtn')->pause($pause)
                     ->typeSlowly('firstName', 'John')
@@ -41,19 +43,6 @@ class SignupTest extends DuskTestCase
                     ->click('#nextBtn')->pause($pause)
                     ->click('#eyeColorMenu > ul > li[data-hex-value="#7FB4BE"]')
                     ->click('#nextBtn')->pause($pause)
-                    ->click('label[for="tattoosN"]')->pause($pause)
-                    ->click('#nextBtn')->pause($pause)
-                    // note that for .custom-radio elemnents, radio() does not work because radio element is outside of viewport
-                    ->click('label[for="convert"]')->pause($pause)
-                    ->click('#nextBtn')->pause($pause)
-                    ->click('label[for="salat4"]')->pause($pause)
-                    ->click('#nextBtn')->pause($pause)
-                    ->click('label[for="quran1"]')->pause($pause)
-                    ->click('#nextBtn')->pause($pause)
-                    ->click('label[for="smokingFreq2"]')->pause($pause)
-                    ->click('#nextBtn')->pause($pause)
-                    ->click('label[for="drinkingFreq4"]')->pause($pause)
-                    ->click('#nextBtn')->pause($pause)
                     ->click('label[for="master"]')->pause($pause)
                     ->click('#nextBtn')->pause($pause)
                     ->typeSlowly('job', 'elect')->pause(4000)
@@ -68,11 +57,26 @@ class SignupTest extends DuskTestCase
                     ->click('#nextBtn')->pause($pause)
                     ->typeSlowly('bio', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
                     ->click('#nextBtn')->pause($pause*10)
-                    ->click('button[type="submit"]')
+                    ->click('button[type="submit"]')->pause($pause*5)
 
+                    // phase 2 of profile setup
+                    ->click('#continueBtn')->pause($pause)
+                    ->click('label[for="convert"]')->pause($pause)
+                    ->click('#nextBtn')->pause($pause)
+                    ->click('label[for="salat4"]')->pause($pause)
+                    ->click('#nextBtn')->pause($pause)
+                    ->click('label[for="quran1"]')->pause($pause)
+                    ->click('#nextBtn')->pause($pause)
+                    ->click('label[for="smokingFreq2"]')->pause($pause)
+                    ->click('#nextBtn')->pause($pause)
+                    ->click('label[for="drinkingFreq4"]')->pause($pause)
+                    ->click('#nextBtn')->pause($pause)
+                    ->click('label[for="tattoosN"]')->pause($pause)
+                    ->click('#nextBtn')->pause($pause)
+                    ->click('button[type="submit"]')->pause($pause*5)
                     
 
-                    ->waitFor('#inexistentElement', 30);
+                    ->waitFor('#inexistentElement', 3);
 
 
         });

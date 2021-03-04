@@ -23,13 +23,6 @@ class CreateProfilesTable extends Migration
             $table->char('hair_color', 7);
             $table->char('eye_color', 7);
 
-            $table->string('muslim_since', 20)->nullable();
-            $table->tinyInteger('salat')->nullable();
-            $table->tinyInteger('quran_knowledge')->nullable();
-            $table->boolean('tattoos')->nullable();
-            $table->tinyInteger('smoking_freq')->nullable();
-            $table->tinyInteger('drinking_freq')->nullable();
-
             $table->string('edu', 50)->nullable();
             $table->string('job', 100);
             $table->tinyInteger('salary');
@@ -37,6 +30,15 @@ class CreateProfilesTable extends Migration
             $table->tinyInteger('kids');
 
             $table->string('bio', 300);
+
+            // non-essential fields which are to be filled in by the user in phase 2 of profile setup process
+            $table->string('muslim_since', 20)->nullable();
+            $table->tinyInteger('salat')->nullable();
+            $table->tinyInteger('quran_knowledge')->nullable();
+            $table->boolean('tattoos')->nullable();
+            $table->tinyInteger('smoking_freq')->nullable();
+            $table->tinyInteger('drinking_freq')->nullable();
+
 
             $table->timestamps();
 

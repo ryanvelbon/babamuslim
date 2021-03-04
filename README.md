@@ -8,6 +8,8 @@ php artisan dusk --filter SignupTest
 
 Note that settings are configured to use `babamuslimtest` database.
 
+Note that for .custom-radio elements, dusk's radio() function does not work because radio element is outside of viewport
+
 ## 2.
 
 #########################################################################################################################################################################################
