@@ -4,7 +4,7 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/elements.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.edit.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.create.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -14,6 +14,19 @@
   </div>
   <form id="profileSetupForm" autocomplete="off" method="POST" action="{{ route('profile.store') }}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+    <div class="tab">
+      <h4>Basic Info</h4>
+      <h5>What is your gender?</h5>
+      <p class="custom-radio">
+        <input type="radio" id="genderM" value="1" name="gender">
+        <label for="genderM">male</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="genderF" value="0" name="gender">
+        <label for="genderF">female</label>
+      </p>
+    </div>
     
     <div class="tab">
       <h4>Set up your profile</h4>
@@ -182,16 +195,6 @@
         <label for="quranKnowledgeNA">I prefer not to answer</label>
       </p>
     </div>
-    
-    <!-- <div class="tab">
-      <h4>Personality</h4>
-      <h5>Which describes you best?</h5>
-      <br>
-      <input type="radio" id="romantic" name="" value="romantic">
-      <label for="romantic">romantic</label><br>
-      <input type="radio" id="realistic" name="" value="realistic">
-      <label for="realistic">realistic</label><br>
-    </div> -->
 
     <div class="tab">
       <h4>Foobar</h4>
@@ -246,7 +249,6 @@
       </div>        
     </div>
 
-    <!--    MEN   -->
     <div class="tab">
       <h4>Education</h4>
       <p class="custom-radio">
@@ -332,8 +334,6 @@
       <h6>I have <input style="width: 50px; text-align: center;" type="number" min="0" max="10" placeholder="0" name="kids"> children</h6>
     </div>
 
-    
-
     <!-- <div class="tab">
       <p><input placeholder="Car"></p>
       <p><input placeholder="House"></p>
@@ -344,50 +344,23 @@
       <textarea name="bio" class="custom-textarea" spellcheck="false" placeholder="Write something about yourself..."></textarea>
     </div>
 
-    
-
     <div class="tab">
       <h4>That's everything!</h4>
       <button type="submit">Submit now</button>
     </div>
 
-
-      
-    
     <div class="buttons">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
       <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
     </div>
     
-    <!-- REMOVE THIS! But for some reason .buttons is not visible by Dusk without this -->
-    <div style="text-align:center;margin-top:40px;">
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-      <span class="step"></span>
-    </div>
-
     <input type="hidden" name="token" value="{{ Session::token() }}">
+
     </form>
 </body>
 </html>
 
-<script src="{{ asset('js/profile.edit.js') }}"></script>
+<script src="{{ asset('js/profile.create.js') }}"></script>
 
 <script src="{{ asset('js/autocomplete.js') }}"></script>
 <script type="text/javascript">
@@ -395,4 +368,3 @@
   autocomplete(document.getElementById("job"), professions);
 </script>
 <script src="{{ asset('js/colorPalette.js') }}"></script>
-

@@ -21,6 +21,8 @@ class SignupTest extends DuskTestCase
                     ->typeSlowly('password', '1234qwerAS!')
                     ->typeSlowly('password_confirmation', '1234qwerAS!')
                     ->click('#regForm button')->pause(3000) // long pause required to give page enough time to load
+                    ->click('label[for="genderM"]')->pause($pause)
+                    ->click('#nextBtn')->pause($pause)
                     ->typeSlowly('firstName', 'John')
                     ->typeSlowly('lastName', 'Doe')
                     ->click('#nextBtn')->pause($pause)
@@ -65,12 +67,12 @@ class SignupTest extends DuskTestCase
                     ->typeSlowly('kids', '3')->pause($pause)
                     ->click('#nextBtn')->pause($pause)
                     ->typeSlowly('bio', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
-                    ->click('#nextBtn')->pause($pause)
+                    ->click('#nextBtn')->pause($pause*10)
                     ->click('button[type="submit"]')
 
                     
 
-                    ->waitFor('#inexistentElement', 60);
+                    ->waitFor('#inexistentElement', 10);
 
 
         });

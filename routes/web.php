@@ -17,6 +17,11 @@ Route::get('/profile/edit/extra', [ProfileController::class, 'editExtraInfo'])->
 Route::put('/profile/extra', [ProfileController::class, 'updateExtraInfo'])->name('profile.update.extra');
 // Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 // Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+// Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+// Route::get('/profile/{username}', [ProfileController::class, 'show'])->name('profile.show');
+
+
+
 
 // /profile/deactivate
 

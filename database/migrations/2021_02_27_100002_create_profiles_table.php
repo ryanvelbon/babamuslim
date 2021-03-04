@@ -30,10 +30,10 @@ class CreateProfilesTable extends Migration
             $table->tinyInteger('smoking_freq');
             $table->tinyInteger('drinking_freq');
 
-            $table->string('edu', 50);
+            $table->string('edu', 50)->nullable();
             $table->string('job', 100);
             $table->tinyInteger('salary');
-            $table->string('relationship_status', 30);
+            $table->string('relationship_status', 30)->nullable();
             $table->tinyInteger('kids');
 
             $table->string('bio', 300);
@@ -46,6 +46,7 @@ class CreateProfilesTable extends Migration
 
 
             // if 'na' skip or simply remove value from HTML, latter solution is safer just in case some users actually want to enter "na" such as in a first_name
+            // actually no... this doesn't work because radio element will send a value of "on"
             // revise all fields to check for : unique, nullable, unsigned
 
         });
