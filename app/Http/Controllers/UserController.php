@@ -51,9 +51,5 @@ class UserController extends Controller
 		// use an Event and Listener to automatically create an empty Profile instance and store in DB
 
 		return redirect()->route('profile.edit');
-
-
-    	// dd(json_decode($request->getContent(), true));
-    	// return response()->json($request->all());
     }
 }

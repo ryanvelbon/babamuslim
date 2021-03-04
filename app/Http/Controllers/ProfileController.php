@@ -26,7 +26,8 @@ class ProfileController extends Controller
 
     public function update(Request $request)
     {
-    	return 123;
+        // dd(json_decode($request->getContent(), true));
+        return response()->json($request->all());
 
     	$profile = Profile::find(Auth::id());
 

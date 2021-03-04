@@ -12,7 +12,7 @@
   <div id="progressBar">
     <div class="fill"></div>
   </div>
-  <form id="profileSetupForm" autocomplete="off" method="POST" action="{{ route('profile.edit') }}">
+  <form id="profileSetupForm" autocomplete="off" method="POST" action="{{ route('profile.update') }}">
     <input type="hidden" name="_method" value="PUT">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     
@@ -61,19 +61,60 @@
           @endforeach
         </select>
       </div>
-    </div>      
-    
-    <div class="tab">
-      <h4>Describe yourself</h4>
-      <textarea name="bio" class="custom-textarea" spellcheck="false" placeholder="Write something about yourself..."></textarea>
     </div>
     
     <div class="tab labels-on-left">
-      <h4>Physique</h4>
+      <h4>Appearance</h4>
+      <h5>Physique</h5>
       <label for="height"><h5>Height (cm)</h5></label>
       <input type="number" id="height" name="height" min="100" max="250"></input>
       <label for="weight"><h5>Weight (kg)</h5></label>
       <input type="number" id="weight" name="weight" min="30" max="250"></input>
+    </div>
+
+    <div class="tab">
+      <h4>Appearance</h4>
+      <h5>Your skin color</h5>
+      <!-- note that the hidden input must be placed just before the .color-palette element -->
+      <input type="hidden" name="skin_color" required>
+      <div id="skinColorMenu" class="color-palette">
+        <ul>
+          <?php $skin_colors = array("#FFFFFF","#F8E8E1","#F0D1C4","#E7BAA7","#DDA48B","#D28E70","#C67856","#A26348","#804F3A","#5F3C2D","#402A20","#231914","#000000","#FFDBAC","#F1C27D","#E0AC69","#C68642","#8D5524"); ?>
+          @foreach($skin_colors as $color)
+            <li data-hex-value="{{$color}}" style="background: {{$color}};"></li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab">
+      <h4>Appearance</h4>
+      <h5>Your hair color</h5>
+      <!-- note that the hidden input must be placed just before the .color-palette element -->
+      <input type="hidden" name="hair_color" required>
+      <div id="hairColorMenu" class="color-palette">
+        <ul>
+          <?php $hair_colors = array("#0D0A05","#2E2013","#543B27","#735136","#906636","#C08D58","#D4AB6B","#EFD8A6","#F4EBAA","#FEFDE9","#D56E29","#9A3300","#4F1A00","#CABFB1","#B7A69E","#71635A"); ?>
+          @foreach($hair_colors as $color)
+            <li data-hex-value="{{$color}}" value="{{$color}}" style="background: {{$color}};"></li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab">
+      <h4>Appearance</h4>
+      <h5>Your eye color</h5>
+      <!-- note that the hidden input must be placed just before the .color-palette element -->
+      <input type="hidden" name="eye_color" required>
+      <div id="eyeColorMenu" class="color-palette">
+        <ul>
+          <?php $eye_colors = array("#7FB4BE","#1B5675","#CAD5C3","#3D671D","#1C7847","#497665","#8B4512","#643201","#8A5A2A","#8A7766","#CD8032","#000000"); ?>
+          @foreach($eye_colors as $color)
+            <li data-hex-value="{{$color}}" value="{{$color}}" style="background: {{$color}};"></li>
+          @endforeach
+        </ul>
+      </div>
     </div>
     
     <div class="tab">
@@ -152,65 +193,6 @@
       <input type="radio" id="realistic" name="" value="realistic">
       <label for="realistic">realistic</label><br>
     </div> -->
-    
-    <div class="tab">
-      <h4>Marital Status</h4>
-      <h5>I am currently...</h5>
-      <p class="custom-radio">
-        <input type="radio" id="single" value="single" name="relStatus">
-        <label for="single">single</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="married" value="married" name="relStatus">
-        <label for="married">married</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="divorced" value="divorced" name="relStatus">
-        <label for="divorced">divorced</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="widowed" value="widowed" name="relStatus">
-        <label for="widowed">widowed</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="relStatusNA" value="NA" name="relStatus" checked>
-        <label for="relStatusNA">I prefer not to answer</label>
-      </p>
-    </div>
-
-    <div class="tab">
-      <h4>Kids</h4>
-      <h5>Do you have any children? If so, how many?</h5>
-      <h6>I have <input style="width: 50px; text-align: center;" type="number" min="0" max="10" placeholder="0" name="kids"> children</h6>
-    </div>
-
-    <div class="tab">
-      <h4>Education</h4>
-      <p class="custom-radio">
-        <input type="radio" id="primary" value="primary" name="edu">
-        <label for="primary">Primary Education</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="secondary" value="secondary" name="edu">
-        <label for="secondary">Secondary Education</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="bachelor" value="bachelor" name="edu">
-        <label for="bachelor">Bachelor's Degree</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="master" value="master" name="edu">
-        <label for="master">Master's Degree</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="doctorate" value="doctorate" name="edu">
-        <label for="doctorate">Doctorate</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="eduNA" value="NA" name="edu" checked>
-        <label for="eduNA">I prefer not to answer</label>
-      </p>
-    </div>
 
     <div class="tab">
       <h4>Foobar</h4>
@@ -267,6 +249,34 @@
 
     <!--    MEN   -->
     <div class="tab">
+      <h4>Education</h4>
+      <p class="custom-radio">
+        <input type="radio" id="primary" value="primary" name="edu">
+        <label for="primary">Primary Education</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="secondary" value="secondary" name="edu">
+        <label for="secondary">Secondary Education</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="bachelor" value="bachelor" name="edu">
+        <label for="bachelor">Bachelor's Degree</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="master" value="master" name="edu">
+        <label for="master">Master's Degree</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="doctorate" value="doctorate" name="edu">
+        <label for="doctorate">Doctorate</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="eduNA" value="NA" name="edu" checked>
+        <label for="eduNA">I prefer not to answer</label>
+      </p>
+    </div>
+
+    <div class="tab">
       <div class="autocomplete" style="width:300px;">
         <h4>Profession</h4>
         <h5>What is your profession?</h5>
@@ -292,6 +302,37 @@
       </div>        
     </div>
 
+    <div class="tab">
+      <h4>Marital Status</h4>
+      <h5>I am currently...</h5>
+      <p class="custom-radio">
+        <input type="radio" id="single" value="single" name="relStatus">
+        <label for="single">single</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="married" value="married" name="relStatus">
+        <label for="married">married</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="divorced" value="divorced" name="relStatus">
+        <label for="divorced">divorced</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="widowed" value="widowed" name="relStatus">
+        <label for="widowed">widowed</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="relStatusNA" value="NA" name="relStatus" checked>
+        <label for="relStatusNA">I prefer not to answer</label>
+      </p>
+    </div>
+
+    <div class="tab">
+      <h4>Kids</h4>
+      <h5>Do you have any children? If so, how many?</h5>
+      <h6>I have <input style="width: 50px; text-align: center;" type="number" min="0" max="10" placeholder="0" name="kids"> children</h6>
+    </div>
+
     
 
     <!-- <div class="tab">
@@ -300,56 +341,19 @@
     </div> -->
 
     <div class="tab">
-      <h4>Appearance</h4>
-      <h5>Your skin color</h5>
-      <!-- note that the hidden input must be placed just before the .color-palette element -->
-      <input type="hidden" name="skin_color" required>
-      <div id="skinColorMenu" class="color-palette">
-        <ul>
-          <?php $skin_colors = array("#FFFFFF","#F8E8E1","#F0D1C4","#E7BAA7","#DDA48B","#D28E70","#C67856","#A26348","#804F3A","#5F3C2D","#402A20","#231914","#000000","#FFDBAC","#F1C27D","#E0AC69","#C68642","#8D5524"); ?>
-          @foreach($skin_colors as $color)
-            <li data-hex-value="{{$color}}" style="background: {{$color}};"></li>
-          @endforeach
-        </ul>
-      </div>
+      <h4>Describe yourself</h4>
+      <textarea name="bio" class="custom-textarea" spellcheck="false" placeholder="Write something about yourself..."></textarea>
     </div>
-
-    <div class="tab">
-      <h4>Appearance</h4>
-      <h5>Your hair color</h5>
-      <!-- note that the hidden input must be placed just before the .color-palette element -->
-      <input type="hidden" name="hair_color" required>
-      <div id="hairColorMenu" class="color-palette">
-        <ul>
-          <?php $hair_colors = array("#0D0A05","#2E2013","#543B27","#735136","#906636","#C08D58","#D4AB6B","#EFD8A6","#F4EBAA","#FEFDE9","#D56E29","#9A3300","#4F1A00","#CABFB1","#B7A69E","#71635A"); ?>
-          @foreach($hair_colors as $color)
-            <li data-hex-value="{{$color}}" value="{{$color}}" style="background: {{$color}};"></li>
-          @endforeach
-        </ul>
-      </div>
-    </div>
-
-    <div class="tab">
-      <h4>Appearance</h4>
-      <h5>Your eye color</h5>
-      <!-- note that the hidden input must be placed just before the .color-palette element -->
-      <input type="hidden" name="eye_color" required>
-      <div id="eyeColorMenu" class="color-palette">
-        <ul>
-          <?php $eye_colors = array("#7FB4BE","#1B5675","#CAD5C3","#3D671D","#1C7847","#497665","#8B4512","#643201","#8A5A2A","#8A7766","#CD8032","#000000"); ?>
-          @foreach($eye_colors as $color)
-            <li data-hex-value="{{$color}}" value="{{$color}}" style="background: {{$color}};"></li>
-          @endforeach
-        </ul>
-      </div>
-    </div>
-
-
-    <!--   WOMEN     -->
 
     
 
-    
+    <div class="tab">
+      <h4>That's everything!</h4>
+      <button type="submit">Submit now</button>
+    </div>
+
+
+      
     
     <div class="buttons">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
