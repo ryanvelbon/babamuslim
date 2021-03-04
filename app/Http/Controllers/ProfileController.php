@@ -18,13 +18,13 @@ class ProfileController extends Controller
     	return 123;
     }
 
-    public function edit()
+    public function create()
     {
     	$countries = DB::select('SELECT id, nicename FROM countries');
-    	return view('profile.edit', ['countries' => $countries ]);
+    	return view('profile.create', ['countries' => $countries ]);
     }
 
-    public function update(Request $request)
+    public function store(Request $request)
     {
         // dd(json_decode($request->getContent(), true));
         return response()->json($request->all());

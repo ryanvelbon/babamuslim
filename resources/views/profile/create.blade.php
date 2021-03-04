@@ -12,8 +12,7 @@
   <div id="progressBar">
     <div class="fill"></div>
   </div>
-  <form id="profileSetupForm" autocomplete="off" method="POST" action="{{ route('profile.update') }}">
-    <input type="hidden" name="_method" value="PUT">
+  <form id="profileSetupForm" autocomplete="off" method="POST" action="{{ route('profile.store') }}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     
     <div class="tab">
