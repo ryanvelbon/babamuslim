@@ -41,14 +41,14 @@ class SignupTest extends DuskTestCase
                     ->click('#nextBtn')->pause($pause)
                     ->click('#eyeColorMenu > ul > li[data-hex-value="#7FB4BE"]')
                     ->click('#nextBtn')->pause($pause)
+                    ->click('label[for="tattoosN"]')->pause($pause)
+                    ->click('#nextBtn')->pause($pause)
                     // note that for .custom-radio elemnents, radio() does not work because radio element is outside of viewport
                     ->click('label[for="convert"]')->pause($pause)
                     ->click('#nextBtn')->pause($pause)
-                    ->click('label[for="salatY"]')->pause($pause)
+                    ->click('label[for="salat4"]')->pause($pause)
                     ->click('#nextBtn')->pause($pause)
                     ->click('label[for="quran1"]')->pause($pause)
-                    ->click('#nextBtn')->pause($pause)
-                    ->click('label[for="tattoosN"]')->pause($pause)
                     ->click('#nextBtn')->pause($pause)
                     ->click('label[for="smokingFreq2"]')->pause($pause)
                     ->click('#nextBtn')->pause($pause)
@@ -72,7 +72,7 @@ class SignupTest extends DuskTestCase
 
                     
 
-                    ->waitFor('#inexistentElement', 10);
+                    ->waitFor('#inexistentElement', 30);
 
 
         });

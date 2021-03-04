@@ -29,7 +29,8 @@
     </div>
     
     <div class="tab">
-      <h4>Set up your profile</h4>
+      <h4>Basic Info</h4>
+      <h5>Name</h5>
       <input name="firstName" placeholder="first name">
       <input name="lastName" placeholder="last name">
     </div>
@@ -39,7 +40,8 @@
         $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         $current_year = (int) date("Y");
       ?>
-      <h4>Birthday</h4>
+      <h4>Basic Info</h4>
+      <h5>Birthday</h5>
       <div class="select">
         <select name="dd">
           @for($i = 1; $i <= 31; $i++)
@@ -64,8 +66,9 @@
     </div>
 
     <div class="tab">
-      <h4>Nationality</h4>
-      <h5>I am from...</h5>
+      <h4>Basic Info</h4>
+      <h5>Nationality</h5>
+      <h6>I am from...</h6>
       <div class="select">
         <select name="nationality">
           @foreach($countries as $country)
@@ -86,9 +89,10 @@
 
     <div class="tab">
       <h4>Appearance</h4>
-      <h5>Your skin color</h5>
+      <h5>Skin</h5>
+      <h6>What is your skin color?</h6>
       <!-- note that the hidden input must be placed just before the .color-palette element -->
-      <input type="hidden" name="skin_color" required>
+      <input type="hidden" name="skinColor" required>
       <div id="skinColorMenu" class="color-palette">
         <ul>
           <?php $skin_colors = array("#FFFFFF","#F8E8E1","#F0D1C4","#E7BAA7","#DDA48B","#D28E70","#C67856","#A26348","#804F3A","#5F3C2D","#402A20","#231914","#000000","#FFDBAC","#F1C27D","#E0AC69","#C68642","#8D5524"); ?>
@@ -101,9 +105,10 @@
 
     <div class="tab">
       <h4>Appearance</h4>
-      <h5>Your hair color</h5>
+      <h5>Hair</h5>
+      <h6>What is your hair color?</h6>
       <!-- note that the hidden input must be placed just before the .color-palette element -->
-      <input type="hidden" name="hair_color" required>
+      <input type="hidden" name="hairColor" required>
       <div id="hairColorMenu" class="color-palette">
         <ul>
           <?php $hair_colors = array("#0D0A05","#2E2013","#543B27","#735136","#906636","#C08D58","#D4AB6B","#EFD8A6","#F4EBAA","#FEFDE9","#D56E29","#9A3300","#4F1A00","#CABFB1","#B7A69E","#71635A"); ?>
@@ -116,9 +121,10 @@
 
     <div class="tab">
       <h4>Appearance</h4>
-      <h5>Your eye color</h5>
+      <h5>Eyes</h5>
+      <h6>What is your eye color?</h6>
       <!-- note that the hidden input must be placed just before the .color-palette element -->
-      <input type="hidden" name="eye_color" required>
+      <input type="hidden" name="eyeColor" required>
       <div id="eyeColorMenu" class="color-palette">
         <ul>
           <?php $eye_colors = array("#7FB4BE","#1B5675","#CAD5C3","#3D671D","#1C7847","#497665","#8B4512","#643201","#8A5A2A","#8A7766","#CD8032","#000000"); ?>
@@ -127,6 +133,23 @@
           @endforeach
         </ul>
       </div>
+    </div>
+
+    <div class="tab">
+      <h4>Appearance</h4>
+      <h5>Do you have any tattoos?</h5>
+      <p class="custom-radio">
+        <input type="radio" id="tattoosY" value="1" name="tattoos">
+        <label for="tattoosY">Yes</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="tattoosN" value="0" name="tattoos">
+        <label for="tattoosN">No</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="tattoosNA" value="NA" name="tattoos" checked>
+        <label for="tattoosNA">I prefer not to answer</label>
+      </p>
     </div>
     
     <div class="tab">
@@ -154,16 +177,24 @@
       <h4>Spirituality</h4>
       <h5>Do you pray 5 times a day?</h5>
       <p class="custom-radio">
-        <input type="radio" id="salatY" value="yes" name="salat">
-        <label for="salatY">Yes, I pray 5 times a day</label>
+        <input type="radio" id="salat5" value="5" name="salat">
+        <label for="salat5">Yes, I pray 5 times a day. I offer both the Fard and the Sunnah.</label>
       </p>
       <p class="custom-radio">
-        <input type="radio" id="salatN" value="no" name="salat">
-        <label for="salatN">No, I never pray.</label>
+        <input type="radio" id="salat4" value="4" name="salat">
+        <label for="salat4">Yes, I pray 5 times a day but I only offer the Fard.</label>
       </p>
       <p class="custom-radio">
-        <input type="radio" id="salatSometimes" value="sometimes" name="salat">
-        <label for="salatSometimes">I pray but I am not consistent.</label>
+        <input type="radio" id="salat3" value="3" name="salat">
+        <label for="salat3">I pray but I sometimes miss some prayers due to work or negligence.</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="salat2" value="2" name="salat">
+        <label for="salat2">I am not consistent with my salat. I start and stop.</label>
+      </p>
+      <p class="custom-radio">
+        <input type="radio" id="salat1" value="1" name="salat">
+        <label for="salat1">No, I currently do not pray.</label>
       </p>
       <p class="custom-radio">
         <input type="radio" id="salatNA" value="NA" name="salat" checked>
@@ -183,6 +214,10 @@
         <label for="quran4">I know several Juz</label>
       </p>
       <p class="custom-radio">
+        <input type="radio" id="quran3" value="3" name="quranKnowledge">
+        <label for="quran3">I know several surah</label>
+      </p>
+      <p class="custom-radio">
         <input type="radio" id="quran2" value="2" name="quranKnowledge">
         <label for="quran2">I can read Quran but have only memorized a few surah</label>
       </p>
@@ -191,30 +226,13 @@
         <label for="quran1">I cannot read Quran yet</label>
       </p>
       <p class="custom-radio">
-        <input type="radio" id="quranKnowledgeNA" value="NA" name="quranKnowledge" checked>
-        <label for="quranKnowledgeNA">I prefer not to answer</label>
+        <input type="radio" id="quranNA" value="NA" name="quranKnowledge" checked>
+        <label for="quranNA">I prefer not to answer</label>
       </p>
     </div>
 
     <div class="tab">
-      <h4>Foobar</h4>
-      <h5>Do you have any tattoos?</h5>
-      <p class="custom-radio">
-        <input type="radio" id="tattoosY" value="yes" name="tattoos">
-        <label for="tattoosY">Yes</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="tattoosN" value="no" name="tattoos">
-        <label for="tattoosN">No</label>
-      </p>
-      <p class="custom-radio">
-        <input type="radio" id="tattoosNA" value="NA" name="tattoos" checked>
-        <label for="tattoosNA">I prefer not to answer</label>
-      </p>
-    </div>
-
-    <div class="tab">
-      <h4>Foobar</h4>
+      <h4>Habits</h4>
       <h5>Do you smoke?</h5>
       <div class="custom-slider">
         <input type="radio" name="smokingFreq" id="smokingFreq1" value="1" required>
@@ -232,7 +250,7 @@
     </div>
 
     <div class="tab">
-      <h4>Foobar</h4>
+      <h4>Habits</h4>
       <h5>Do you drink?</h5>
       <div class="custom-slider">
         <input type="radio" name="drinkingFreq" id="drinkingFreq1" value="1" required>
