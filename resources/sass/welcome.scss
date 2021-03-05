@@ -108,8 +108,17 @@ button {
     color: dodgerblue;
   }
 
+  .errors {
+    color: #f00;
+
+    ul {
+      list-style-type: none;
+    }
+  }
+
   .signup {
     text-align: center;
+    color: myColor(textC);
   }
 }
 

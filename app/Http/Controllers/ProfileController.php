@@ -74,6 +74,6 @@ class ProfileController extends Controller
 
         $profile->save();
 
-        return "additional info saved";
+        return redirect()->route('home');
     }
 }

@@ -13,14 +13,19 @@ class SignupTest extends DuskTestCase
     public function testExample()
     {
         $this->browse(function (Browser $browser) {
+
             $pause = 200;
+            $email = 'johndoe@example.com';
+            $pwd = '1234qwerAS!';
+
             $browser->visit('/')->pause(3000)
                     ->click('#signupBtn')
-                    ->typeSlowly('email', 'johndoe@example.com')
+                    ->typeSlowly('email', $email)
                     ->typeSlowly('username', 'johnnyboy99')
-                    ->typeSlowly('password', '1234qwerAS!')
-                    ->typeSlowly('password_confirmation', '1234qwerAS!')
-                    ->click('#regForm button')->pause(3000) // long pause required to give page enough time to load
+                    ->typeSlowly('password', $pwd)
+                    ->typeSlowly('password_confirmation', $pwd)
+                    ->click('#regForm button')
+                    ->pause(3000) // long pause required to give page enough time to load
 
                     // phase 1 of profile setup
                     ->click('label[for="genderM"]')->pause($pause)
@@ -45,7 +50,7 @@ class SignupTest extends DuskTestCase
                     ->click('#nextBtn')->pause($pause)
                     ->click('label[for="master"]')->pause($pause)
                     ->click('#nextBtn')->pause($pause)
-                    ->typeSlowly('job', 'elect')->pause(4000)
+                    ->typeSlowly('job', 'elect')->pause(1000)
                     ->assertSee('Electrician')
                     ->click('#jobautocomplete-list > div') // this selector will not always be accurate. Find a better way to identify the desired dropdown list item
                     ->click('#nextBtn')->pause($pause)
@@ -55,9 +60,10 @@ class SignupTest extends DuskTestCase
                     ->click('#nextBtn')->pause($pause)
                     ->typeSlowly('kids', '3')->pause($pause)
                     ->click('#nextBtn')->pause($pause)
-                    ->typeSlowly('bio', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
-                    ->click('#nextBtn')->pause($pause*10)
-                    ->click('button[type="submit"]')->pause($pause*5)
+                    ->type('bio', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+                    ->click('#nextBtn')->pause($pause)
+                    ->click('button[type="submit"]')
+                    ->pause(2000)
 
                     // phase 2 of profile setup
                     ->click('#continueBtn')->pause($pause)
@@ -74,7 +80,30 @@ class SignupTest extends DuskTestCase
                     ->click('label[for="tattoosN"]')->pause($pause)
                     ->click('#nextBtn')->pause($pause)
                     ->click('button[type="submit"]')->pause($pause*5)
+
+                    // Dashboard: log out
+                    ->click('#logoutBtn')
+                    ->pause(3000)
+
+                    // Landing page: provide incorrect email
+                    ->typeSlowly('loginEmail', $email."xxxxx")
+                    ->typeSlowly('loginPwd', $pwd)
+                    ->click('#loginBtn')
+                    ->pause(2000)
+
+                    // Landing page: provide incorrect password
+                    ->typeSlowly('loginEmail', $email)
+                    ->typeSlowly('loginPwd', $pwd."xxxxx")
+                    ->click('#loginBtn')
+                    ->pause(2000)
+
+                    // Landing page: provide correct login credentials
+                    ->typeSlowly('loginEmail', $email)
+                    ->typeSlowly('loginPwd', $pwd)
+                    ->click('#loginBtn')
+                    ->pause(2000)
                     
+                    // dashboard                    
 
                     ->waitFor('#inexistentElement', 3);
 

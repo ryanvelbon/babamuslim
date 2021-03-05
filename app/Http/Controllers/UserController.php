@@ -50,4 +50,27 @@ class UserController extends Controller
 
 		return redirect()->route('profile.create');
     }
+
+    private function setSessions()
+    {
+
+    }
+
+    public function postLogin(Request $request)
+    {
+    	if(Auth::attempt(['email' => $request['loginEmail'],
+    				   'password' => $request['loginPwd']])){
+    		$this->setSessions();
+    		return redirect()->route('home'); // redirect to dashboard. Remember, landing page and dashboard share same route
+    	}
+    	return redirect()->back()->withErrors(['Incorrect email or password.']);
+    }
+
+    public function logout(Request $request)
+    {
+    	Auth::logout();
+    	$request->session()->invalidate();
+    	$request->session()->regenerateToken();
+    	return redirect()->route('home');
+    }
 }
